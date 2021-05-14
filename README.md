@@ -1,1 +1,1 @@
-# An SMTP Client webapp create using the PHPMailer Library
+# An SMTP Client webapp created using the PHPMailer Library
