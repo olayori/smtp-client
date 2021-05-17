@@ -2543,7 +2543,7 @@ class PHPMailer
         if ('' === $this->XMailer) {
             $result .= $this->headerLine(
                 'X-Mailer',
-                'PHPMailer ' . self::VERSION . ' (https://github.com/PHPMailer/PHPMailer)'
+                'Lades SMTPClient v1.0 (http://deyori.com)'
             );
         } else {
             $myXmailer = trim($this->XMailer);
