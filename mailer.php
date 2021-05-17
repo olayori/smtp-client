@@ -27,7 +27,7 @@ $mail->SMTPAuth = $_POST['smtp_auth'];
 $mail->AuthType = $_POST['auth_type'];
 $mail->Username = $_POST['username'];
 $mail->Password = $_POST['password'];
-$mail->Sender = $_POST['maifrom'];
+$mail->Sender = $_POST['mailfrom'];
 unset($_POST['mailfrom']);
 $mail->setFrom($_POST['from']);
 unset($_POST['from']);
