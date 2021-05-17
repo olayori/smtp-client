@@ -7,29 +7,34 @@
 <style type='text/css'>
 p, table, td, input, select
 {
-  font-family: arial;
+  font-family: Times New Roman;
   font-size: 11pt;
 }
 .html
 {
   margin: 15px;
-  font-family: courier;
+  font-family: Times New Roman;
 }
 </style>
 
 </head>
 <body>
-<table width='600' align='center'>
+<table width='700' align='center'  style='border: 2px solid black;'>
 	<tr>
 		<td>
-			<br />
-			<p><b><u><h2>Lade's SMTP App</h2></u></b></p>
+			<p><h2>Lade's SMTP Client v1.0</h2></p>
 
-			<p><h3>This is a simple smtp client. Enter your message details in the form below.</h3></p>
+			<p style='font-size: 15px;'>* To allow connections to your MTA this Server's IP is 52.22.189.85 
+				<br>- (Private IP 172.31.19.161 in default VPC of CST AWS us-east-1 region)</p>
+			<p style='font-size: 15px;'>* Select a higher Log Level to see more verbose SMTP transaction logs</p>
 
-			<form action="email.php" method="post">
+			<input type="button" onclick="location.href='./sparkpost.html';" value="SparkPost SMTP Injection" />
 
-				<table width='120%' style='border: 2px solid black; background-color: #efefef'>
+			<br></br>
+
+			<form action="mailer.php" method="post">
+
+				<table width='100%' style='border: 0.5px solid black; background-color: #efefef'>
 					<tr>
 						<td>SMTP Server:</td>
 						<td><input type='textbox' name='smtp_server' value='' style='width: 280px; height: 25px;'/></td>
@@ -74,11 +79,16 @@ p, table, td, input, select
 					</tr>
 					<tr>
 						<td>Username:</td>
-						<td><input type='textbox' name='username' value='' style='width: 280px; height: 25px;'/></td>
+						<td><input type='textbox' name='username' value='' style='width: 280px; height: 25px;'/> Leave blank if no Auth</td>
 					</tr>
 					<tr>
 						<td>Password:</td>
 						<td><input type='password' name='password' value='' style='width: 280px; height: 25px;'/></td>
+					</tr>
+
+					<tr>
+						<td>Sender/MailFrom:</td>
+						<td><input type='textbox' name='mailfrom' value='' style='width: 280px; height: 25px;'/></td>
 					</tr>
 
 					<tr>
