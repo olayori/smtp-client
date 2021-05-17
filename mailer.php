@@ -42,15 +42,17 @@ unset($_POST['message']);
 if(!$mail->send()){
     echo "Mailer Error: " . $mail->ErrorInfo;
     
-    echo <<<OUTPUT
-<html><body><br></br><br><a href="../index.html">CLICK HERE TO START OVER</a></br></body></html>
-OUTPUT;
+    echo <button onclick="goBack()">Go Back</button>;
 }else{
     echo "Message sent!";
-    echo <<<OUTPUT
-<html><body><br></br><br><a href="../index.html">CLICK HERE TO START OVER</a></br></body></html>
-OUTPUT;
+    echo <button onclick="goBack()">Go Back</button>;
 
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+        
 exit();
 }
 
