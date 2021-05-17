@@ -35,6 +35,8 @@ $mail->addAddress($_POST['to']);
 unset($_POST['to']);
 $mail->Subject = ($_POST['subject']);
 unset($_POST['subject']);
+$mail->addCustomHeader($_POST['custom_header']);
+unset($_POST['custom_header']);
 $mail->msgHTML($_POST['message']);
 unset($_POST['message']);
 //$mail->AltBody = 'HTML messaging not supported';
