@@ -41,7 +41,7 @@ unset($_POST['message']);
 if(!$mail->send()){
     echo "Mailer Error: " . $mail->ErrorInfo;
     echo <<<OUTPUT
-<html><body><br/><button onclick="goBack()">Go Back</button> 
+<html><body><br></br><button onclick="goBack()">Go Back</button> 
 <script>
 function goBack() {
   window.history.back();
@@ -54,7 +54,7 @@ OUTPUT;
 
     echo "Message sent!";
     echo <<<OUTPUT
-<html><body><br/><button onclick="goBack()">Go Back</button> 
+<html><body><br></br><button onclick="goBack()">Go Back</button> 
 <script>
 function goBack() {
   window.history.back();
