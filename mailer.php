@@ -2,11 +2,10 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 
-require 'Exception.php';
-require 'PHPMailer.php';
-require 'SMTP.php';
+require 'src/Exception.php';
+require 'src/PHPMailer.php';
+require 'src/SMTP.php';
 
 $mail = new PHPMailer;
 $mail->isSMTP(); 
@@ -25,7 +24,7 @@ $mail->SMTPOptions = array(
     )
 ); 
 $mail->SMTPAuth = $_POST['smtp_auth'];
-#$mail->AuthType = $_POST['auth_type'];
+$mail->AuthType = $_POST['auth_type'];
 $mail->Username = $_POST['username'];
 $mail->Password = $_POST['password'];
 $mail->setFrom($_POST['from']);
@@ -41,20 +40,30 @@ unset($_POST['message']);
 
 if(!$mail->send()){
     echo "Mailer Error: " . $mail->ErrorInfo;
-    
-    echo <button onclick="goBack()">Go Back</button>;
-}else{
-    echo "Message sent!";
-    echo <button onclick="goBack()">Go Back</button>;
-
+    echo <<<OUTPUT
+<html><body><br/><button onclick="goBack()">Go Back</button> 
 <script>
 function goBack() {
   window.history.back();
 }
 </script>
-        
+</body></html>
+OUTPUT;
+
+}else{
+
+    echo "Message sent!";
+    echo <<<OUTPUT
+<html><body><br/><button onclick="goBack()">Go Back</button> 
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</body></html>
+OUTPUT;
+
 exit();
 }
 
 ?>
-
