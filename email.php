@@ -48,7 +48,7 @@ OUTPUT;
 }else{
     echo "Message sent!";
     echo <<<OUTPUT
-<html><body><br><a href="../index.html">CLICK HERE TO START OVER</a></br></body></html>
+<html><body><br></br><br><a href="../index.html">CLICK HERE TO START OVER</a></br></body></html>
 OUTPUT;
 
 exit();
