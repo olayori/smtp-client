@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<title>SMTP Client</title>
+
+<style type='text/css'>
+p, table, td, input, select
+{
+  font-family: Times New Roman;
+  font-size: 11pt;
+}
+.html
+{
+  margin: 15px;
+  font-family: Times New Roman;
+}
+</style>
+
+</head>
+<body>
+<table width='700' align='center'  style='border: 2px solid black;'>
+	<tr>
+		<td>
+			<p><h2>Lade's SMTP Client v1.0</h2></p>
+
+			<p style='font-size: 15px;'>* Select a higher Log Level to see more verbose SMTP transaction logs</p>
+
+			<input type="button" onclick="location.href='./index.html';" value="Back" />
+
+			<br></br>
+
+			<form action="mailer.php" method="post">
+
+				<table width='100%' style='border: 0.5px solid black; background-color: #efefef'>
+					<tr>
+						<td>SMTP Server:</td>
+						<td><input type='textbox' name='smtp_server' value='smtp.sparkpostmail.com' style='width: 280px; height: 25px;'/></td>
+					</tr>
+					<tr>
+						<td>SMTP Port:</td>
+						<td><input type='textbox' name='smtp_port' value='587' style='width: 45px; height: 20px;' ></td>
+						<td>Log Level:</td>
+						<td><select name="debug_level">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>								
+							</select>
+						</td>
+					</tr>					
+
+					<tr>
+						<td>STARTTLS:</td>
+						<td><select name="tls" >
+							    <option value="tls">Yes</option>
+								<option value="">No</option>							
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>SMTP Auth:</td>
+						<td><select name="smtp_auth" >
+								<option value='1'>Yes</option>
+								<option value='0'>No</option>								
+							</select>
+						</td>						
+					</tr>
+					<tr>						
+						<td>SMTP Auth Type</td>
+						<td>
+							<input type='radio' name='auth_type' value='' />None 
+							<input type='radio' name='auth_type' value='PLAIN' checked />PLAIN
+							<input type='radio' name='auth_type' value='LOGIN' />LOGIN 
+							<input type='radio' name='auth_type' value='CRAM-MD5' />CRAM-MD5
+						</td>
+					</tr>
+					<tr>
+						<td>Username:</td>
+						<td><input type='textbox' name='username' value='SMTP_Injection' style='width: 280px; height: 25px;'/> Leave blank if no Auth</td>
+					</tr>
+					<tr>
+						<td>Password (API_KEY):</td>
+						<td><input type='password' name='password' value='' style='width: 280px; height: 25px;'/></td>
+					</tr>
+
+					<tr>
+						<td>Sender/MailFrom:</td>
+						<td><input type='textbox' name='mailfrom' value='' style='width: 280px; height: 25px;'/></td>
+					</tr>
+
+					<tr>
+						<td>From:</td>
+						<td><input type='textbox' name='from' value='' style='width: 280px; height: 25px;'/></td>
+					</tr>
+					<tr>
+						<td>To:</td>
+						<td><input type='textbox' name='to' value='' style='width: 280px; height: 25px;' /></td>
+					</tr>
+					<tr>
+						<td>Subject:</td>
+						<td><input type='textbox' name='subject' value='' style='width: 280px; height: 30px;' /></td>
+					</tr>					
+
+					<tr>
+						<td>Message:</td>
+						<td><textarea style='width: 320px; height: 120px;' name='message' /></textarea></td>
+					</tr>
+				</table>
+				<p><input type='submit' value='SEND EMAIL' /></p>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
