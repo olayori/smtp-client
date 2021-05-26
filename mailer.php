@@ -18,8 +18,8 @@ $mail->SMTPSecure = $_POST['tls'];
 $mail->SMTPAutoTLS = false;
 $mail->SMTPOptions = array(
         'ssl' => array(
-        'verify_peer' => true,
-        'verify_peer_name' => true,
+        'verify_peer' => false,
+        'verify_peer_name' => false,
         'allow_self_signed' => true
     )
 ); 
